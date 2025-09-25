@@ -8,34 +8,39 @@ const Hero = () => {
 
   const collageImages = [
     {
-      src: 'https://images.pexels.com/photos/1024993/pexels-photo-1024993.jpeg?auto=compress&cs=tinysrgb&w=600',
+      src: 'https://images.pexels.com/photos/1024993/pexels-photo-1024993.jpeg?auto=compress&cs=tinysrgb&w=800',
       alt: 'Candid wedding moment',
-      className: 'col-span-2 row-span-2'
+      className: 'col-span-2 row-span-3'
     },
     {
-      src: 'https://images.pexels.com/photos/1729797/pexels-photo-1729797.jpeg?auto=compress&cs=tinysrgb&w=400',
+      src: 'https://images.pexels.com/photos/1729797/pexels-photo-1729797.jpeg?auto=compress&cs=tinysrgb&w=600',
       alt: 'Wedding ceremony',
-      className: 'col-span-1 row-span-1'
+      className: 'col-span-1 row-span-2'
     },
     {
-      src: 'https://images.pexels.com/photos/2253842/pexels-photo-2253842.jpeg?auto=compress&cs=tinysrgb&w=400',
+      src: 'https://images.pexels.com/photos/2253842/pexels-photo-2253842.jpeg?auto=compress&cs=tinysrgb&w=600',
       alt: 'Couple portrait',
       className: 'col-span-1 row-span-1'
     },
     {
-      src: 'https://images.pexels.com/photos/1024995/pexels-photo-1024995.jpeg?auto=compress&cs=tinysrgb&w=400',
+      src: 'https://images.pexels.com/photos/1024995/pexels-photo-1024995.jpeg?auto=compress&cs=tinysrgb&w=600',
       alt: 'Reception celebration',
-      className: 'col-span-1 row-span-2'
-    },
-    {
-      src: 'https://images.pexels.com/photos/1729798/pexels-photo-1729798.jpeg?auto=compress&cs=tinysrgb&w=400',
-      alt: 'Wedding details',
       className: 'col-span-1 row-span-1'
     },
     {
-      src: 'https://images.pexels.com/photos/2253870/pexels-photo-2253870.jpeg?auto=compress&cs=tinysrgb&w=400',
+      src: 'https://images.pexels.com/photos/1729798/pexels-photo-1729798.jpeg?auto=compress&cs=tinysrgb&w=600',
+      alt: 'Wedding details',
+      className: 'col-span-2 row-span-2'
+    },
+    {
+      src: 'https://images.pexels.com/photos/2253870/pexels-photo-2253870.jpeg?auto=compress&cs=tinysrgb&w=600',
       alt: 'Traditional ceremony',
-      className: 'col-span-2 row-span-1'
+      className: 'col-span-1 row-span-1'
+    },
+    {
+      src: 'https://images.pexels.com/photos/1024996/pexels-photo-1024996.jpeg?auto=compress&cs=tinysrgb&w=600',
+      alt: 'Bridal moments',
+      className: 'col-span-1 row-span-1'
     }
   ];
 
@@ -63,20 +68,20 @@ const Hero = () => {
 
           {/* Image Collage */}
           <div className="order-1 lg:order-2">
-            <div className="grid grid-cols-3 grid-rows-3 gap-3 h-[500px] md:h-[600px]">
+            <div className="grid grid-cols-4 grid-rows-4 gap-2 h-[500px] md:h-[650px]">
               {collageImages.map((image, index) => (
                 <div
                   key={index}
-                  className={`${image.className} relative overflow-hidden rounded-lg group cursor-pointer`}
+                  className={`${image.className} relative overflow-hidden rounded-xl group cursor-pointer shadow-lg`}
                   onClick={scrollToPortfolio}
                 >
                   <img
                     src={image.src}
                     alt={image.alt}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     loading={index < 3 ? 'eager' : 'lazy'}
                   />
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
                 </div>
               ))}
             </div>
