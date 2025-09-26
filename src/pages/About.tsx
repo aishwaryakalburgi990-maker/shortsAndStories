@@ -29,14 +29,14 @@ const About = () => {
       {/* Header Section */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Link 
-            to="/" 
+          <Link
+            to="/"
             className="inline-flex items-center text-gray-600 hover:text-amber-600 transition-colors mb-8 group"
           >
             <ArrowLeft className="h-4 w-4 mr-2 group-hover:-translate-x-1 transition-transform" />
             Back to Home
           </Link>
-          
+
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-6xl font-light text-gray-900 mb-6">
               About Me
@@ -66,7 +66,7 @@ const About = () => {
 
             <div>
               <h2 className="text-3xl md:text-4xl font-light text-gray-900 mb-8">
-                Hello, I'm [Photographer Name]
+                Hello, I'm Sujay
               </h2>
               <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
                 <p>

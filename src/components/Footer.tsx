@@ -17,20 +17,20 @@ const Footer = () => {
             <Camera className="h-8 w-8" />
             <span>Shots & Stories</span>
           </button>
-          
+
           <p className="text-gray-400 mb-6 max-w-2xl mx-auto">
-            Preserving your most precious moments with authenticity, artistry, and heart. 
+            Preserving your most precious moments with authenticity, artistry, and heart.
             Every frame tells a story, every story deserves to be remembered.
           </p>
-          
+
           <div className="flex items-center justify-center space-x-2 text-sm text-gray-400">
             <span>Made with</span>
             <Heart className="h-4 w-4 text-red-500" />
             <span>for couples in love</span>
           </div>
-          
+
           <div className="mt-8 pt-8 border-t border-gray-800 text-sm text-gray-400">
-            <p>&copy; 2024 Shots & Stories. All rights reserved.</p>
+            <p>&copy; 2025 Shots & Stories. All rights reserved.</p>
           </div>
         </div>
       </div>

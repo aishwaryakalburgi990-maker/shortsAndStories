@@ -14,8 +14,8 @@ export interface Couple {
 
 export const couples: Couple[] = [
   {
-    id: 'arjun-priya',
-    names: 'Arjun & Priya',
+    id: 'Suhas and Revathi',
+    names: 'Suhas and Revathi',
     title: 'A Royal Rajasthani Celebration',
     date: 'December 15, 2023',
     location: 'Jaipur, Rajasthan',
@@ -40,8 +40,8 @@ export const couples: Couple[] = [
     ]
   },
   {
-    id: 'rohit-sneha',
-    names: 'Rohit & Sneha',
+    id: 'Prabhanjan and Maanasa',
+    names: 'Prabhanjan and Maanasa',
     title: 'Modern Mumbai Romance',
     date: 'November 8, 2023',
     location: 'Mumbai, Maharashtra',
@@ -63,8 +63,8 @@ export const couples: Couple[] = [
     ]
   },
   {
-    id: 'vikram-asha',
-    names: 'Vikram & Asha',
+    id: 'Vinayak and Vyshnavi',
+    names: 'Vinayak and Vyshnavi',
     title: 'Himalayan Hill Station Wedding',
     date: 'October 22, 2023',
     location: 'Shimla, Himachal Pradesh',
@@ -86,8 +86,8 @@ export const couples: Couple[] = [
     ]
   },
   {
-    id: 'karan-meera',
-    names: 'Karan & Meera',
+    id: 'Aarthi and Punith',
+    names: 'Aarthi and Punith',
     title: 'Lakeside Palace Wedding',
     date: 'September 12, 2023',
     location: 'Udaipur, Rajasthan',
