@@ -73,6 +73,7 @@ const Header = () => {
               }`}
             >
               Videos
+            </Link>
             <button
               onClick={() => scrollToSection('about')}
               className={`text-sm font-medium transition-colors duration-300 hover:text-amber-600 ${
