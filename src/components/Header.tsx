@@ -57,14 +57,15 @@ const Header = () => {
             >
               Home
             </button>
-            <button
-              onClick={() => scrollToSection('portfolio')}
+            <Link
+              to="/portfolio"
+              onClick={() => setIsMobileMenuOpen(false)}
               className={`text-sm font-medium transition-colors duration-300 hover:text-amber-600 ${
                 isScrolled ? 'text-gray-700' : 'text-white/90'
               }`}
             >
               Portfolio
-            </button>
+            </Link>
             <Link
               to="/videos"
               className={`text-sm font-medium transition-colors duration-300 hover:text-amber-600 ${
@@ -72,15 +73,14 @@ const Header = () => {
               }`}
             >
               Videos
-            </Link>
-            <Link
-              to="/about"
+            <button
+              onClick={() => scrollToSection('about')}
               className={`text-sm font-medium transition-colors duration-300 hover:text-amber-600 ${
                 isScrolled ? 'text-gray-700' : 'text-white/90'
               }`}
             >
               About
-            </Link>
+            </button>
             <button
               onClick={() => scrollToSection('contact')}
               className={`text-sm font-medium transition-colors duration-300 hover:text-amber-600 ${
