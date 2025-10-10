@@ -59,7 +59,6 @@ const Header = () => {
             </button>
             <Link
               to="/portfolio"
-              onClick={() => setIsMobileMenuOpen(false)}
               className={`text-sm font-medium transition-colors duration-300 hover:text-amber-600 ${
                 isScrolled ? 'text-gray-700' : 'text-white/90'
               }`}
@@ -113,12 +112,13 @@ const Header = () => {
               >
                 Home
               </button>
-              <button
-                onClick={() => scrollToSection('portfolio')}
+              <Link
+                to="/portfolio"
+                onClick={() => setIsMobileMenuOpen(false)}
                 className="block w-full text-left px-4 py-2 text-gray-700 hover:text-amber-600 hover:bg-gray-50 transition-colors duration-200"
               >
                 Portfolio
-              </button>
+              </Link>
               <Link
                 to="/videos"
                 onClick={() => setIsMobileMenuOpen(false)}
