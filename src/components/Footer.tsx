@@ -17,7 +17,7 @@ const Footer = () => {
             <img 
               src="/SHOTS.png" 
               alt="Shots & Stories - Framing Emotions" 
-              className="h-12 w-auto filter brightness-0 invert"
+             className="h-16 w-auto filter brightness-0 invert"
             />
           </button>
 

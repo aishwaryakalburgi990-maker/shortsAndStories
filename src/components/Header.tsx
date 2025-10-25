@@ -40,7 +40,7 @@ const Header = () => {
             <img 
               src="/SHOTS.png" 
               alt="Shots & Stories - Framing Emotions" 
-              className="h-10 w-auto"
+             className="h-14 w-auto"
             />
           </Link>
 
