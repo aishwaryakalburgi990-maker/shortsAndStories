@@ -100,9 +100,9 @@ const Hero = () => {
       <div className="absolute inset-0 flex items-center justify-center">
         <div className="text-center text-white px-4 sm:px-6 lg:px-8 max-w-4xl">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-light mb-6 leading-tight">
-            Capturing Love
+            Framing Emotions
             <br />
-            <span className="text-amber-400 font-medium">Unscripted</span>
+            <span className="text-amber-400 font-medium">Through Love</span>
           </h1>
           <p className="text-lg md:text-xl font-light mb-4 text-white/90 max-w-2xl mx-auto">
             {heroImages[currentSlide].title}

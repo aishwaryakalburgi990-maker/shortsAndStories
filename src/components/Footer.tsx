@@ -12,10 +12,13 @@ const Footer = () => {
         <div className="text-center">
           <button
             onClick={scrollToTop}
-            className="flex items-center justify-center space-x-2 mx-auto mb-6 text-2xl font-bold hover:text-amber-400 transition-colors"
+            className="flex items-center justify-center mx-auto mb-6 hover:opacity-80 transition-opacity"
           >
-            <Camera className="h-8 w-8" />
-            <span>Shots & Stories</span>
+            <img 
+              src="/SHOTS.png" 
+              alt="Shots & Stories - Framing Emotions" 
+              className="h-12 w-auto filter brightness-0 invert"
+            />
           </button>
 
           <p className="text-gray-400 mb-6 max-w-2xl mx-auto">

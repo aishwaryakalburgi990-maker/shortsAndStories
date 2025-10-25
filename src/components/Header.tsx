@@ -37,14 +37,11 @@ const Header = () => {
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <Camera className={`h-8 w-8 transition-colors duration-300 ${
-              isScrolled ? 'text-gray-800' : 'text-white'
-            }`} />
-            <span className={`text-xl font-bold transition-colors duration-300 ${
-              isScrolled ? 'text-gray-800' : 'text-white'
-            }`}>
-              Shots & Stories
-            </span>
+            <img 
+              src="/SHOTS.png" 
+              alt="Shots & Stories - Framing Emotions" 
+              className="h-10 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}
