@@ -36,31 +36,31 @@ const Header = () => {
           <div className="hidden md:flex items-center space-x-8">
             <button
               onClick={() => scrollToSection('home')}
-              className="text-sm font-medium text-gray-700 transition-colors duration-300 hover:text-amber-600"
+              className="text-sm font-josefin font-medium text-gray-700 transition-colors duration-300 hover:text-amber-600"
             >
               Home
             </button>
             <Link
               to="/portfolio"
-              className="text-sm font-medium text-gray-700 transition-colors duration-300 hover:text-amber-600"
+              className="text-sm font-josefin font-medium text-gray-700 transition-colors duration-300 hover:text-amber-600"
             >
               Portfolio
             </Link>
             <Link
               to="/videos"
-              className="text-sm font-medium text-gray-700 transition-colors duration-300 hover:text-amber-600"
+              className="text-sm font-josefin font-medium text-gray-700 transition-colors duration-300 hover:text-amber-600"
             >
               Videos
             </Link>
             <button
               onClick={() => scrollToSection('about')}
-              className="text-sm font-medium text-gray-700 transition-colors duration-300 hover:text-amber-600"
+              className="text-sm font-josefin font-medium text-gray-700 transition-colors duration-300 hover:text-amber-600"
             >
               About
             </button>
             <button
               onClick={() => scrollToSection('contact')}
-              className="text-sm font-medium text-gray-700 transition-colors duration-300 hover:text-amber-600"
+              className="text-sm font-josefin font-medium text-gray-700 transition-colors duration-300 hover:text-amber-600"
             >
               Contact
             </button>
@@ -81,34 +81,34 @@ const Header = () => {
             <div className="py-4 space-y-2">
               <button
                 onClick={() => scrollToSection('home')}
-                className="block w-full text-left px-4 py-2 text-gray-700 hover:text-amber-600 hover:bg-gray-50 transition-colors duration-200"
+                className="block w-full text-left px-4 py-2 font-josefin text-gray-700 hover:text-amber-600 hover:bg-gray-50 transition-colors duration-200"
               >
                 Home
               </button>
               <Link
                 to="/portfolio"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="block w-full text-left px-4 py-2 text-gray-700 hover:text-amber-600 hover:bg-gray-50 transition-colors duration-200"
+                className="block w-full text-left px-4 py-2 font-josefin text-gray-700 hover:text-amber-600 hover:bg-gray-50 transition-colors duration-200"
               >
                 Portfolio
               </Link>
               <Link
                 to="/videos"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="block w-full text-left px-4 py-2 text-gray-700 hover:text-amber-600 hover:bg-gray-50 transition-colors duration-200"
+                className="block w-full text-left px-4 py-2 font-josefin text-gray-700 hover:text-amber-600 hover:bg-gray-50 transition-colors duration-200"
               >
                 Videos
               </Link>
               <Link
                 to="/about"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="block w-full text-left px-4 py-2 text-gray-700 hover:text-amber-600 hover:bg-gray-50 transition-colors duration-200"
+                className="block w-full text-left px-4 py-2 font-josefin text-gray-700 hover:text-amber-600 hover:bg-gray-50 transition-colors duration-200"
               >
                 About
               </Link>
               <button
                 onClick={() => scrollToSection('contact')}
-                className="block w-full text-left px-4 py-2 text-gray-700 hover:text-amber-600 hover:bg-gray-50 transition-colors duration-200"
+                className="block w-full text-left px-4 py-2 font-josefin text-gray-700 hover:text-amber-600 hover:bg-gray-50 transition-colors duration-200"
               >
                 Contact
               </button>

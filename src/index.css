@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Base font settings - using Google Fonts */
+body {
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+/* Heading styles - using Playfair Display as elegant serif alternative */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+}
