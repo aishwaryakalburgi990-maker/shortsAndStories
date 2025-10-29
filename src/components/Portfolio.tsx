@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { X, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { couples } from '../data/couples';
@@ -18,18 +18,18 @@ const Portfolio = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="columns-1 md:columns-2 lg:columns-3 gap-6">
           {couples.map((couple) => (
             <Link
               key={couple.id}
               to={`/portfolio/${couple.id}`}
-              className="group block"
+              className="group block break-inside-avoid mb-6"
             >
               <div className="relative overflow-hidden rounded-2xl mb-4">
                 <img
                   src={couple.coverImage}
                   alt={`${couple.names} wedding`}
-                  className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300"></div>

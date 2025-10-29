@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const About = () => {
   const achievements = [
-    { icon: Heart, number: '500+', label: 'Couples Served' },
+    { icon: Heart, number: '50+', label: 'Couples Served' },
     { icon: Camera, number: '8+', label: 'Years Experience' },
     { icon: Award, number: '50+', label: 'Awards Won' }
   ];
@@ -52,18 +52,21 @@ const About = () => {
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="relative">
-              <div className="relative overflow-hidden rounded-2xl">
-                <img
-                  src="https://images.pexels.com/photos/4348401/pexels-photo-4348401.jpeg?auto=compress&cs=tinysrgb&w=800"
-                  alt="Photographer at work"
-                  className="w-full h-96 lg:h-[500px] object-cover"
-                />
-              </div>
-              <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-amber-600 rounded-2xl"></div>
-              <div className="absolute -top-6 -left-6 w-24 h-24 bg-gray-200 rounded-2xl"></div>
-            </div>
+            {/* IMAGE SIDE */}
+            <div className="relative flex justify-center items-center">
+  <div className="relative rounded-2xl overflow-hidden bg-gray-100 max-w-[600px] mx-auto">
+    <img
+      src="https://drive.google.com/thumbnail?id=1uRgs8_9hKfsUCTP9yjR3kwt_djOEHbhp&sz=w1000" 
+      alt="Photographer at work"
+      className="w-auto h-auto max-w-full max-h-[500px] object-contain rounded-2xl shadow-lg"
+      loading="lazy"
+    />
+  </div>
 
+  <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-amber-600 rounded-2xl"></div>
+  <div className="absolute -top-6 -left-6 w-24 h-24 bg-gray-200 rounded-2xl"></div>
+</div>
+            {/* TEXT SIDE */}
             <div>
               <h2 className="text-3xl md:text-4xl font-light text-gray-900 mb-8">
                 Hello, I'm Sujay
@@ -127,7 +130,10 @@ const About = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {philosophy.map((item, index) => (
-              <div key={index} className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow duration-300">
+              <div
+                key={index}
+                className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow duration-300"
+              >
                 <h3 className="text-xl font-medium text-gray-900 mb-4">{item.title}</h3>
                 <p className="text-gray-600 leading-relaxed">{item.description}</p>
               </div>
@@ -148,7 +154,7 @@ const About = () => {
                 When I'm not behind the camera, you'll find me exploring new destinations, seeking inspiration in everyday moments, or spending time with my own family. I believe that experiencing life fully makes me a better storyteller for your special day.
               </p>
               <p>
-                I understand that choosing a wedding photographer is about more than just technical skills - it's about trust, connection, and finding someone who truly understands your vision. I take pride in building genuine relationships with my couples, ensuring that your wedding day feels comfortable and authentic.
+                I understand that choosing a wedding photographer is about more than just technical skills — it's about trust, connection, and finding someone who truly understands your vision. I take pride in building genuine relationships with my couples, ensuring that your wedding day feels comfortable and authentic.
               </p>
             </div>
           </div>

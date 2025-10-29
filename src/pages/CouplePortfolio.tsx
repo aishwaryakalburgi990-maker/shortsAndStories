@@ -55,17 +55,17 @@ const CouplePortfolio = () => {
       {/* Photo Gallery */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="columns-1 md:columns-2 lg:columns-3 gap-6">
             {couple.gallery.map((image, index) => (
               <div
                 key={index}
-                className="group relative overflow-hidden rounded-lg cursor-pointer transform transition-all duration-300 hover:scale-105"
+                className="group relative overflow-hidden rounded-lg cursor-pointer break-inside-avoid mb-6 transition-all duration-300 hover:shadow-xl"
                 onClick={() => setSelectedImage(image)}
               >
                 <img
                   src={image}
                   alt={`${couple.names} wedding photo ${index + 1}`}
-                  className="w-full h-80 object-cover transition-transform duration-300 group-hover:scale-110"
+                  className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105"
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300"></div>
@@ -95,11 +95,17 @@ const CouplePortfolio = () => {
 
       {/* Image Modal */}
       {selectedImage && (
-        <div className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4">
-          <div className="relative max-w-4xl max-h-full">
+        <div 
+          className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center p-4 cursor-pointer"
+          onClick={() => setSelectedImage(null)}
+        >
+          <div className="relative max-w-6xl max-h-[90vh] w-full h-full flex items-center justify-center">
             <button
-              onClick={() => setSelectedImage(null)}
-              className="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors"
+              onClick={(e) => {
+                e.stopPropagation();
+                setSelectedImage(null);
+              }}
+              className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors z-10 bg-black/50 rounded-full p-2"
             >
               <X className="h-8 w-8" />
             </button>
@@ -107,6 +113,7 @@ const CouplePortfolio = () => {
               src={selectedImage}
               alt="Portfolio image"
               className="max-w-full max-h-full object-contain rounded-lg"
+              onClick={(e) => e.stopPropagation()}
             />
           </div>
         </div>

@@ -7,7 +7,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-gray-900 text-white py-12">
+    <footer className="bg-amber-600 text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <button
@@ -21,18 +21,18 @@ const Footer = () => {
             />
           </button>
 
-          <p className="text-gray-400 mb-6 max-w-2xl mx-auto">
+          <p className="text-white mb-6 max-w-2xl mx-auto">
             Preserving your most precious moments with authenticity, artistry, and heart.
             Every frame tells a story, every story deserves to be remembered.
           </p>
 
-          <div className="flex items-center justify-center space-x-2 text-sm text-gray-400">
+          <div className="flex items-center justify-center space-x-2 text-sm text-white">
             <span>Made with</span>
-            <Heart className="h-4 w-4 text-red-500" />
+            <Heart className="h-4 w-4 text-amber-500" />
             <span>for couples in love</span>
           </div>
 
-          <div className="mt-8 pt-8 border-t border-gray-800 text-sm text-gray-400">
+          <div className="mt-8 pt-8 border-t border-gray-800 text-sm text-white">
             <p>&copy; 2025 Shots & Stories. All rights reserved.</p>
           </div>
         </div>
