@@ -32,8 +32,8 @@ export const uploadImages = async (req: Request, res: Response): Promise<void> =
       return;
     }
 
-    const uploadResults = [];
-    const errors = [];
+    const uploadResults: any[] = [];
+    const errors: any[] = [];
 
     // Process each file
     for (const file of files) {
@@ -214,8 +214,8 @@ export const uploadCoupleImages = async (req: Request, res: Response): Promise<v
       return;
     }
 
-    const uploadResults = [];
-    const errors = [];
+    const uploadResults: any[] = [];
+    const errors: any[] = [];
 
     // Get current max order index
     const maxOrderResult = await prisma.coupleImage.findFirst({
