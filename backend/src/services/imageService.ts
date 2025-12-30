@@ -413,9 +413,10 @@ export const uploadToCloudinary = async (
         }
       );
 
-      // Write the buffer to the upload stream
-      uploadStream.write(imageBuffer);
-      uploadStream.end();
+      // Use the stream as a writable stream
+      const stream = uploadStream as NodeJS.WritableStream;
+      stream.write(imageBuffer);
+      stream.end();
     });
   } catch (error) {
     console.error('Cloudinary upload error:', error);
