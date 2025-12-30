@@ -1,0 +1,175 @@
+import React, { useState, useEffect } from 'react';
+import { ChevronDown, ChevronLeft, ChevronRight } from 'lucide-react';
+import { useHeroImages } from '../hooks/useHero';
+
+const Hero = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const { data: heroData, loading, error } = useHeroImages();
+
+  const scrollToAbout = () => {
+    document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  // Fallback hero images if API fails
+  const fallbackImages = [
+    {
+      id: 1,
+      imageUrl: "https://drive.google.com/thumbnail?id=1UUnxbCcS2u-hfS8rw2ZFycdTUr2UGBhU&sz=w1000",
+      title: 'Authentic Moments',
+      subtitle: 'Capturing genuine emotions as they unfold',
+      orderIndex: 1,
+      isActive: true,
+      createdAt: ''
+    },
+    {
+      id: 2,
+      imageUrl: "https://drive.google.com/thumbnail?id=1DQic3t9ZKCQ2FRxkdzHtfTccmwxWGtyw&sz=w1000",
+      title: 'Sacred Traditions',
+      subtitle: 'Preserving cultural heritage and rituals',
+      orderIndex: 2,
+      isActive: true,
+      createdAt: ''
+    },
+    {
+      id: 3,
+      imageUrl: "https://drive.google.com/thumbnail?id=1aR9jRaWDSa4h0sWhG9MojacLPnHuKet8&sz=w1000",
+      title: 'Timeless Portraits',
+      subtitle: 'Creating memories that last forever',
+      orderIndex: 3,
+      isActive: true,
+      createdAt: ''
+    }
+  ];
+
+  const heroImages = heroData?.heroImages || fallbackImages;
+
+  // Auto-advance slides
+  useEffect(() => {
+    if (heroImages.length === 0) return;
+    
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroImages.length);
+    }, 5000);
+
+    return () => clearInterval(timer);
+  }, [heroImages.length]);
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % heroImages.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + heroImages.length) % heroImages.length);
+  };
+
+  const goToSlide = (index: number) => {
+    setCurrentSlide(index);
+  };
+
+  if (loading) {
+    return (
+      <section id="home" className="relative min-h-screen bg-white flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-amber-600 mx-auto mb-4"></div>
+          <p className="text-gray-600">Loading...</p>
+        </div>
+      </section>
+    );
+  }
+
+  if (error) {
+    console.error('Hero images error:', error);
+    // Continue with fallback images
+  }
+
+  return (
+    <section id="home" className="relative min-h-screen bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-12">
+        {/* Heading */}
+        <div className="text-center mb-8">
+          <h1 className="text-3xl md:text-5xl font-light leading-tight">
+            Hello, We Are
+            <br />
+            <span className="text-amber-600 font-semibold">Shots & Stories</span>
+          </h1>
+        </div>
+
+        {/* Framed Slider */}
+        <div className="relative mx-auto max-w-5xl rounded-2xl border-4 border-amber-600 shadow-xl overflow-hidden">
+          <div className="relative w-full h-[55vh] md:h-[65vh] bg-black">
+            {heroImages.map((image, index) => (
+              <div
+                key={image.id}
+                className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+                  index === currentSlide ? 'opacity-100' : 'opacity-0'
+                }`}
+              >
+                <img
+                  src={image.imageUrl}
+                  alt={image.title || `Hero image ${index + 1}`}
+                  className="w-full h-full object-cover"
+                  loading={index === 0 ? 'eager' : 'lazy'}
+                />
+                <div className="absolute inset-0 bg-black/20"></div>
+                
+                {/* Text overlay */}
+                {(image.title || image.subtitle) && (
+                  <div className="absolute bottom-8 left-8 text-white">
+                    {image.title && (
+                      <h2 className="text-2xl md:text-3xl font-light mb-2">{image.title}</h2>
+                    )}
+                    {image.subtitle && (
+                      <p className="text-lg opacity-90">{image.subtitle}</p>
+                    )}
+                  </div>
+                )}
+              </div>
+            ))}
+
+            {/* Arrows inside frame */}
+            <button
+              onClick={prevSlide}
+              className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center text-white transition-all duration-300"
+              aria-label="Previous image"
+            >
+              <ChevronLeft className="h-5 w-5" />
+            </button>
+            <button
+              onClick={nextSlide}
+              className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center text-white transition-all duration-300"
+              aria-label="Next image"
+            >
+              <ChevronRight className="h-5 w-5" />
+            </button>
+
+            {/* Dots */}
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
+              {heroImages.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => goToSlide(index)}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                    index === currentSlide ? 'bg-amber-400 scale-110' : 'bg-white/60 hover:bg-white'
+                  }`}
+                  aria-label={`Go to slide ${index + 1}`}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* CTA below frame */}
+        <div className="text-center mt-8">
+          <button
+            onClick={scrollToAbout}
+            className="inline-flex items-center px-8 py-4 bg-amber-600 hover:bg-amber-700 text-white rounded-full font-medium transition-all duration-300 transform hover:scale-105 shadow-lg"
+          >
+            Discover My Work
+          </button>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Hero;
