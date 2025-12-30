@@ -413,7 +413,9 @@ export const uploadToCloudinary = async (
         }
       );
 
-      uploadStream.end(imageBuffer);
+      // Write the buffer to the upload stream
+      uploadStream.write(imageBuffer);
+      uploadStream.end();
     });
   } catch (error) {
     console.error('Cloudinary upload error:', error);
