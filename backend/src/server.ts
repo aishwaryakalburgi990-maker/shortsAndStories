@@ -15,14 +15,32 @@ import aboutRoutes from './routes/about';
 
 const app = express();
 
+// Trust proxy for Render deployment
+app.set('trust proxy', 1);
+
 // Security middleware
 app.use(helmet({
   crossOriginResourcePolicy: { policy: "cross-origin" }
 }));
 
 // CORS configuration
+const allowedOrigins = [
+  config.server.frontendUrl,
+  'https://shortsandstorie.netlify.app',
+  'http://localhost:5173', // For local development
+];
+
 app.use(cors({
-  origin: config.server.frontendUrl,
+  origin: (origin, callback) => {
+    // Allow requests with no origin (like mobile apps or curl requests)
+    if (!origin) return callback(null, true);
+    
+    if (allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    } else {
+      return callback(new Error('Not allowed by CORS'));
+    }
+  },
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
   allowedHeaders: ['Content-Type', 'Authorization'],
