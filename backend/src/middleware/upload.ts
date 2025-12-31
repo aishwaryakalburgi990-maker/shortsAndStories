@@ -1,9 +1,9 @@
-import multer from 'multer';
+import multer, { FileFilterCallback } from 'multer';
 import { Request } from 'express';
 import { config } from '../config/env';
 
 // File filter for images
-const fileFilter = (req: Request, file: Express.Multer.File, cb: multer.FileFilterCallback) => {
+const fileFilter = (req: Request, file: any, cb: FileFilterCallback) => {
   // Check file type
   if (file.mimetype.startsWith('image/')) {
     cb(null, true);

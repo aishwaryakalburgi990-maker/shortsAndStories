@@ -26,7 +26,7 @@ export const uploadImages = async (req: Request, res: Response): Promise<void> =
     }
 
     // Generic image upload (for hero, profile, etc.)
-    const files = req.files as Express.Multer.File[];
+    const files = req.files as any[];
     if (!files || files.length === 0) {
       res.status(400).json({ error: 'No images provided' });
       return;
@@ -208,7 +208,7 @@ export const uploadCoupleImages = async (req: Request, res: Response): Promise<v
     }
 
     // Check if files were uploaded
-    const files = req.files as Express.Multer.File[];
+    const files = req.files as any[];
     if (!files || files.length === 0) {
       res.status(400).json({ error: 'No images provided' });
       return;

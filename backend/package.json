@@ -19,7 +19,6 @@
   },
   "dependencies": {
     "@prisma/client": "^6.0.1",
-    "prisma": "^6.0.1",
     "@types/node": "^22.19.3",
     "bcryptjs": "^2.4.3",
     "cloudinary": "^2.5.1",
@@ -31,6 +30,8 @@
     "joi": "^17.13.3",
     "jsonwebtoken": "^9.0.2",
     "multer": "^2.0.0-rc.4",
+    "mysql2": "^3.16.0",
+    "prisma": "^6.0.1",
     "sharp": "^0.33.5"
   },
   "devDependencies": {
