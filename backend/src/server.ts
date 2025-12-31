@@ -27,7 +27,9 @@ app.use(helmet({
 const allowedOrigins = [
   config.server.frontendUrl,
   'https://shortsandstorie.netlify.app',
+  'https://shortsandstories.netlify.app', // Alternative spelling
   'http://localhost:5173', // For local development
+  /https:\/\/.*\.netlify\.app$/, // Allow all Netlify deploy previews
 ];
 
 app.use(cors({
@@ -35,9 +37,23 @@ app.use(cors({
     // Allow requests with no origin (like mobile apps or curl requests)
     if (!origin) return callback(null, true);
     
-    if (allowedOrigins.includes(origin)) {
+    console.log(`🌐 CORS request from origin: ${origin}`);
+    
+    // Check if origin matches any allowed origins (strings or regex)
+    const isAllowed = allowedOrigins.some(allowedOrigin => {
+      if (typeof allowedOrigin === 'string') {
+        return allowedOrigin === origin;
+      } else if (allowedOrigin instanceof RegExp) {
+        return allowedOrigin.test(origin);
+      }
+      return false;
+    });
+    
+    if (isAllowed) {
+      console.log(`✅ CORS allowed for origin: ${origin}`);
       return callback(null, true);
     } else {
+      console.log(`❌ CORS blocked origin: ${origin}`);
       return callback(new Error('Not allowed by CORS'));
     }
   },
