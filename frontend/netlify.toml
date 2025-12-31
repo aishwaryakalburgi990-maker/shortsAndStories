@@ -11,9 +11,9 @@
   status = 200
 
 [context.production.environment]
-  VITE_API_URL = "https://shots-stories-backend.onrender.com/api"
+  VITE_API_URL = "https://shortsandstories-uvfj.onrender.com/api"
   VITE_CLOUDINARY_CLOUD_NAME = "ds75rphlo"
 
 [context.deploy-preview.environment]
-  VITE_API_URL = "https://shots-stories-backend.onrender.com/api"
+  VITE_API_URL = "https://shortsandstories-uvfj.onrender.com/api"
   VITE_CLOUDINARY_CLOUD_NAME = "ds75rphlo"
